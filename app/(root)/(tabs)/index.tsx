@@ -1,20 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Link } from 'expo-router'
+import { View, Text } from 'react-native';
+import React from 'react';
+import { Link } from 'expo-router';
+import '../../globals.css';
 
-export default function index() {
+export default function Index() {
   return (
-    <View style={{
-      display:'flex',
-      flex:1,
-      flexDirection:'row',
-      justifyContent:'center',
-    }}>
-      <Text className='font-bold my-10 font-rubik text-3xl'>Welcome  to 1159</Text>
+    <View className="container">
+      <Text className="welcomeText">Welcome to 1159</Text>
       <Link href="/sign-in">Sign In</Link>
       <Link href="/explore">Explore</Link>
       <Link href="/profile">Profile</Link>
-      {/* <Link href="/properties/[id]">Property</Link> */}
     </View>
-  )
+  );
 }

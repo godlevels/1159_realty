@@ -1,7 +1,41 @@
 import { Tabs } from "expo-router";
-import { Image, ImageSourcePropType, Text, View } from "react-native";
+import { Image, ImageSourcePropType, Text, View, StyleSheet } from "react-native";
 
 import icons from "@/constants/icons";
+
+const styles = StyleSheet.create({
+  tabIconContainer: {
+    flex: 1,
+    marginTop: 12,
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  tabIconImage: {
+    width: 24,
+    height: 24,
+  },
+  tabIconText: {
+    fontSize: 10,
+    width: "100%",
+    textAlign: "center",
+    marginTop: 4,
+  },
+  tabIconTextFocused: {
+    color: "#0061FF",
+    fontFamily: "Rubik-Medium",
+  },
+  tabIconTextUnfocused: {
+    color: "#666876",
+    fontFamily: "Rubik",
+  },
+  tabBarStyle: {
+    backgroundColor: "white",
+    position: "absolute",
+    borderTopColor: "#f4a803",
+    borderTopWidth: 1,
+    minHeight: 70,
+  },
+});
 
 const TabIcon = ({
   focused,
@@ -12,19 +46,20 @@ const TabIcon = ({
   icon: ImageSourcePropType;
   title: string;
 }) => (
-  <View className="flex-1 mt-3 flex flex-col items-center">
+  <View style={styles.tabIconContainer}>
     <Image
       source={icon}
-      tintColor={focused ? "#0061FF" : "#666876"}
+      style={[
+        styles.tabIconImage,
+        { tintColor: focused ? "#0061FF" : "#666876" },
+      ]}
       resizeMode="contain"
-      className="size-6"
     />
     <Text
-      className={`${
-        focused
-          ? "text-primary-300 font-rubik-medium"
-          : "text-black-200 font-rubik"
-      } text-xs w-full text-center mt-1`}
+      style={[
+        styles.tabIconText,
+        focused ? styles.tabIconTextFocused : styles.tabIconTextUnfocused,
+      ]}
     >
       {title}
     </Text>
@@ -36,13 +71,7 @@ const TabsLayout = () => {
     <Tabs
       screenOptions={{
         tabBarShowLabel: false,
-        tabBarStyle: {
-          backgroundColor: "white",
-          position: "absolute",
-          borderTopColor: "#f4a803",
-          borderTopWidth: 1,
-          minHeight: 70,
-        },
+        tabBarStyle: styles.tabBarStyle,
       }}
     >
       <Tabs.Screen
