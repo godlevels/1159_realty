@@ -1,5 +1,5 @@
-import container from "@/assets/images/container.png";
+import onboarding from "@/assets/images/onboarding.png";
 
 export default {
-  container,
+  onboarding,
 };

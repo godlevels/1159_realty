@@ -1,41 +1,7 @@
 import { Tabs } from "expo-router";
-import { Image, ImageSourcePropType, Text, View, StyleSheet } from "react-native";
-
+import { Image, ImageSourcePropType, Text, View } from "react-native";
 import icons from "@/constants/icons";
-
-const styles = StyleSheet.create({
-  tabIconContainer: {
-    flex: 1,
-    marginTop: 12,
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  tabIconImage: {
-    width: 24,
-    height: 24,
-  },
-  tabIconText: {
-    fontSize: 10,
-    width: "100%",
-    textAlign: "center",
-    marginTop: 4,
-  },
-  tabIconTextFocused: {
-    color: "#0061FF",
-    fontFamily: "Rubik-Medium",
-  },
-  tabIconTextUnfocused: {
-    color: "#666876",
-    fontFamily: "Rubik",
-  },
-  tabBarStyle: {
-    backgroundColor: "white",
-    position: "absolute",
-    borderTopColor: "#f4a803",
-    borderTopWidth: 1,
-    minHeight: 70,
-  },
-});
+// import "nativewind/tailwind.css";
 
 const TabIcon = ({
   focused,
@@ -46,20 +12,17 @@ const TabIcon = ({
   icon: ImageSourcePropType;
   title: string;
 }) => (
-  <View style={styles.tabIconContainer}>
+  <View className="flex-1 mt-3 flex-col items-center">
     <Image
       source={icon}
-      style={[
-        styles.tabIconImage,
-        { tintColor: focused ? "#0061FF" : "#666876" },
-      ]}
+      className="w-6 h-6"
+      style={{ tintColor: focused ? "#0061FF" : "#666876" }}
       resizeMode="contain"
     />
     <Text
-      style={[
-        styles.tabIconText,
-        focused ? styles.tabIconTextFocused : styles.tabIconTextUnfocused,
-      ]}
+      className={`text-xs w-full text-center mt-1 ${
+        focused ? "text-[#0061FF] font-medium" : "text-[#666876] font-normal"
+      }`}
     >
       {title}
     </Text>
@@ -71,7 +34,13 @@ const TabsLayout = () => {
     <Tabs
       screenOptions={{
         tabBarShowLabel: false,
-        tabBarStyle: styles.tabBarStyle,
+        tabBarStyle: {
+          backgroundColor: "white",
+          position: "absolute",
+          borderTopColor: "#f4a803",
+          borderTopWidth: 1,
+          minHeight: 70,
+        },
       }}
     >
       <Tabs.Screen

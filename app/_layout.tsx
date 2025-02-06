@@ -22,9 +22,7 @@ export default function RootLayout() {
     }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded) {
-    return null;
-  };
+  console.log("Fonts Loaded:", fontsLoaded);
 
   return (
     <GlobalProvider>
