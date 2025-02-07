@@ -1,3 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Font Faces */
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('./path/to/fonts/Rubik-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Rubik-Bold';
+    src: url('./path/to/fonts/Rubik-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Rubik-ExtraBold';
+    src: url('./path/to/fonts/Rubik-ExtraBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Rubik-Medium';
+    src: url('./path/to/fonts/Rubik-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Rubik-SemiBold';
+    src: url('./path/to/fonts/Rubik-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Rubik-Light';
+    src: url('./path/to/fonts/Rubik-Light.ttf') format('truetype');
+  }
+  
+  
+  .container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .welcomeText {
+    font-size: 30px;
+    font-family: 'Rubik-Bold';
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
