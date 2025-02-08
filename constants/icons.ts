@@ -6,6 +6,12 @@ import edit from "@/assets/icons/edit.png";
 import calendar from "@/assets/icons/calendar.png";
 import rightArrow from "@/assets/icons/right-arrow.png";
 import wallet from "@/assets/icons/wallet.png";
+import person from "@/assets/icons/person.png";
+import shield from "@/assets/icons/shield.png";
+import language from "@/assets/icons/language.png";
+import info from "@/assets/icons/info.png";
+import people from "@/assets/icons/people.png";
+import logout from "@/assets/icons/logout.png";
 
 export default {
     home,
@@ -15,5 +21,11 @@ export default {
     edit,
     calendar,
     wallet,
-    rightArrow
+    rightArrow,
+    person,
+    shield,
+    language,
+    info,
+    people,
+    logout
   };
