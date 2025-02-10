@@ -14,6 +14,7 @@ import people from "@/assets/icons/people.png";
 import logout from "@/assets/icons/logout.png";
 import search from "@/assets/icons/search.png";
 import filter from "@/assets/icons/filter.png";
+import heart from "@/assets/icons/heart.png";
 
 export default {
     home,
@@ -31,5 +32,6 @@ export default {
     people,
     logout,
     search,
-    filter
+    filter,
+    heart
   };

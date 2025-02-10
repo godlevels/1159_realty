@@ -91,7 +91,7 @@ const Profile = () => {
           <Text style={{ fontSize: 20, fontFamily: "Rubik-Bold" }}>
             Profile
           </Text>
-          <Image source={icons.bell} style={{ width: 5, height: 5 }} />
+          <Image source={icons.bell} style={{ width: 10, height: 10 }} />
         </View>
 
         <View
@@ -111,12 +111,12 @@ const Profile = () => {
           >
             <Image
               source={{ uri: user?.avatar }}
-              style={{ width: 176, height: 176, borderRadius: 88 }}
+              style={{ width: 70, height: 70, borderRadius: 88 }}
             />
             <TouchableOpacity
-              style={{ position: "absolute", bottom: 44, right: 8 }}
+              style={{ position: "absolute", bottom: 44, right: 60, }}
             >
-              <Image source={icons.edit} style={{ width: 36, height: 36 }} />
+              <Image source={icons.edit} style={{ width: 15, height: 15 }} />
             </TouchableOpacity>
             <Text
               style={{ fontSize: 24, fontFamily: "Rubik-Bold", marginTop: 8 }}
@@ -135,9 +135,7 @@ const Profile = () => {
           style={{
             flexDirection: "column",
             marginTop: 20,
-            borderTopWidth: 1,
             paddingTop: 20,
-            borderColor: colors.primary200,
           }}
         >
           {profiles.slice(2).map((item, index) => (
@@ -148,10 +146,8 @@ const Profile = () => {
         <View
           style={{
             flexDirection: "column",
-            borderTopWidth: 1,
             marginTop: 20,
             paddingTop: 20,
-            borderColor: colors.primary200,
           }}
         >
           <ProfileItems
