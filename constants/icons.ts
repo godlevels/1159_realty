@@ -12,6 +12,8 @@ import language from "@/assets/icons/language.png";
 import info from "@/assets/icons/info.png";
 import people from "@/assets/icons/people.png";
 import logout from "@/assets/icons/logout.png";
+import search from "@/assets/icons/search.png";
+import filter from "@/assets/icons/filter.png";
 
 export default {
     home,
@@ -27,5 +29,7 @@ export default {
     language,
     info,
     people,
-    logout
+    logout,
+    search,
+    filter
   };

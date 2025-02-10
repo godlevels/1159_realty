@@ -55,7 +55,9 @@ const ProfileItems = ({
         {title}
       </Text>
     </View>
-    {showArrow && <Image source={icons.rightArrow} style={{ width: 10, height: 10 }} />}
+    {showArrow && (
+      <Image source={icons.rightArrow} style={{ width: 10, height: 10 }} />
+    )}
   </TouchableOpacity>
 );
 
@@ -108,7 +110,7 @@ const Profile = () => {
             }}
           >
             <Image
-              source={images.avatar}
+              source={{ uri: user?.avatar }}
               style={{ width: 176, height: 176, borderRadius: 88 }}
             />
             <TouchableOpacity
@@ -119,7 +121,7 @@ const Profile = () => {
             <Text
               style={{ fontSize: 24, fontFamily: "Rubik-Bold", marginTop: 8 }}
             >
-              Paulo
+              {user?.name}
             </Text>
           </View>
         </View>
@@ -130,36 +132,36 @@ const Profile = () => {
         </View>
 
         <View
-        style={{
-          flexDirection: "column",
-          marginTop: 20,
-          borderTopWidth: 1,
-          paddingTop: 20,
-          borderColor: colors.primary200,
-        }}
-      >
-        {profiles.slice(2).map((item, index) => (
-          <ProfileItems key={index} {...item} />
-        ))}
-      </View>
+          style={{
+            flexDirection: "column",
+            marginTop: 20,
+            borderTopWidth: 1,
+            paddingTop: 20,
+            borderColor: colors.primary200,
+          }}
+        >
+          {profiles.slice(2).map((item, index) => (
+            <ProfileItems key={index} {...item} />
+          ))}
+        </View>
 
-      <View
-        style={{
-          flexDirection: "column",
-          borderTopWidth: 1,
-          marginTop: 20,
-          paddingTop: 20,
-          borderColor: colors.primary200,
-        }}
-      >
-        <ProfileItems
-          icon={icons.logout}
-          title="Logout"
-          textStyle={{ color: colors.danger }}
-          showArrow={false}
-          onPress={handleLogout}
-        />
-      </View>
+        <View
+          style={{
+            flexDirection: "column",
+            borderTopWidth: 1,
+            marginTop: 20,
+            paddingTop: 20,
+            borderColor: colors.primary200,
+          }}
+        >
+          <ProfileItems
+            icon={icons.logout}
+            title="Logout"
+            textStyle={{ color: colors.danger }}
+            showArrow={false}
+            onPress={handleLogout}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
