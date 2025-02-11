@@ -11,6 +11,7 @@ import icons from "@/constants/icons";
 import Search from "@/components/Search";
 import colors from "@/constants/Colors";
 import { Card, PopularCards } from "@/components/Cards";
+import Filter from "@/components/Filter";
 
 export default function Index() {
   return (
@@ -92,10 +93,49 @@ export default function Index() {
               </Text>
             </TouchableOpacity>
           </View>
+
+          <View style={{ flexDirection: "row", gap: 20, marginTop: 20 }}>
+            <PopularCards />
+            <PopularCards />
+            <PopularCards />
+          </View>
         </View>
 
-        <PopularCards />
-        <Card />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 15,
+              fontFamily: "Rubik-Bold",
+              color: colors.black300,
+            }}
+          >
+            Our Recommendations
+          </Text>
+          <TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 12,
+                fontFamily: "Rubik-Medium",
+                color: colors.black100,
+              }}
+            >
+              See All
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <Filter />
+        
+        <View style={{ flexDirection: "row", gap: 20, marginTop: 20 }}>
+          <Card />
+          <Card />
+        </View>
       </View>
     </SafeAreaView>
   );

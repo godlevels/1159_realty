@@ -15,6 +15,14 @@ import logout from "@/assets/icons/logout.png";
 import search from "@/assets/icons/search.png";
 import filter from "@/assets/icons/filter.png";
 import heart from "@/assets/icons/heart.png";
+import laundry from "@/assets/icons/laundry.png";
+import carPark from "@/assets/icons/carPark.png";
+import run from "@/assets/icons/run.png";
+import cutlery from "@/assets/icons/cutlery.png";
+import dumbell from "@/assets/icons/dumbell.png";
+import swim from "@/assets/icons/swim.png";
+import wifi from "@/assets/icons/wifi.png";
+import dog from "@/assets/icons/dog.png";
 
 export default {
     home,
@@ -33,5 +41,13 @@ export default {
     logout,
     search,
     filter,
-    heart
+    heart,
+    laundry,
+    carPark,
+    run,
+    cutlery,
+    dumbell,
+    swim,
+    wifi,
+    dog
   };
