@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   FlatList,
+  Button,
 } from "react-native";
 import images from "@/constants/images";
 import icons from "@/constants/icons";
@@ -14,13 +15,15 @@ import colors from "@/constants/Colors";
 import { Card, PopularCards } from "@/components/Cards";
 import Filter from "@/components/Filter";
 import { useGlobalContext } from "@/lib/global-provider";
+import seed from "@/lib/seed";
 
 export default function Index() {
   const { user } = useGlobalContext();
   return (
     <SafeAreaView style={styles.safeArea}>
+      <Button title="Seed" onPress={seed} />
       <FlatList
-        data={[1, 2, 3, 4]}
+        data={[1, 2, 3]}
         renderItem={({ item }) => <Card />}
         keyExtractor={(item) => item.toString()}
         numColumns={2}
