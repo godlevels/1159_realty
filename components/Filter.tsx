@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { router, useLocalSearchParams } from "expo-router";
 import { categories } from "@/constants/data";
@@ -11,7 +11,7 @@ const Filter = () => {
   );
 
   const handleCategory = (category: string) => {
-    if (selectedCategory == category) {
+    if (selectedCategory === category) {
       setSelectedCategory("All");
       router.setParams({ filter: "All" });
       return;
@@ -19,49 +19,68 @@ const Filter = () => {
     setSelectedCategory(category);
     router.setParams({ filter: category });
   };
+
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      style={{ marginTop: 3, marginBottom: 2 }}
-    >
-      {categories.map((item, index) => (
-        <TouchableOpacity
-          onPress={() => handleCategory(item.category)}
-          style={{
-            flexDirection: "column",
-            alignItems: "flex-start",
-            marginRight: 16,
-            paddingHorizontal: 16,
-            paddingVertical: 8,
-            borderRadius: 9999,
-            backgroundColor:
-              selectedCategory == item.category
-                ? colors.black300
-                : colors.black200,
-            borderColor:
-              selectedCategory == item.category
-                ? "transparent"
-                : colors.black300,
-            borderWidth: selectedCategory == item.category ? 0 : 1,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 14,
-              color:
-                selectedCategory == item.category ? "white" : colors.black300,
-              fontFamily:
-                selectedCategory == item.category ? "Rubik-Bold" : "Rubik",
-              marginTop: selectedCategory == item.category ? 2 : 0,
-            }}
+    <View style={styles.container}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoryScroll}>
+        {categories.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() => handleCategory(item.category)}
+            style={[
+              styles.categoryButton,
+              {
+                backgroundColor: selectedCategory === item.category ? colors.black300 : colors.black200,
+                borderColor: selectedCategory === item.category ? 'transparent' : colors.black300,
+              }
+            ]}
           >
-            {item.title}
-          </Text>
-        </TouchableOpacity>
-      ))}
-    </ScrollView>
+            <Text
+              style={[
+                styles.categoryText,
+                {
+                  color: selectedCategory === item.category ? 'white' : colors.black300,
+                  fontFamily: selectedCategory === item.category ? 'Rubik-Bold' : 'Rubik',
+                }
+              ]}
+            >
+              {item.title}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+  },
+  categoryScroll: {
+    marginBottom: 5,
+  },
+  categoryButton: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginRight: 16,
+    paddingHorizontal: 26,
+    paddingVertical: 8,
+    borderRadius: 9999,
+    borderWidth: 1,
+  },
+  categoryText: {
+    fontSize: 14,
+  },
+  recommendationsContainer: {
+    marginTop: 16,
+  },
+  recommendationsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+});
 
 export default Filter;

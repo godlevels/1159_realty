@@ -16,7 +16,7 @@ import search from "@/assets/icons/search.png";
 import filter from "@/assets/icons/filter.png";
 import heart from "@/assets/icons/heart.png";
 import laundry from "@/assets/icons/laundry.png";
-import carPark from "@/assets/icons/carPark.png";
+import carPark from "@/assets/icons/car-park.png";
 import run from "@/assets/icons/run.png";
 import cutlery from "@/assets/icons/cutlery.png";
 import dumbell from "@/assets/icons/dumbell.png";
