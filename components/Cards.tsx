@@ -3,12 +3,14 @@ import React from "react";
 import images from "@/constants/images";
 import icons from "@/constants/icons";
 import colors from "@/constants/Colors";
+import { Models } from "react-native-appwrite";
 
 interface Props {
+  item: Models.Document;
   onPress?: () => void;
 }
 
-export const PopularCards = ({ onPress }: Props) => {
+export const PopularCards = ({ item, onPress }: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -61,7 +63,7 @@ export const PopularCards = ({ onPress }: Props) => {
           }}
           numberOfLines={1}
         >
-          Kings Court
+          {item.name}
         </Text>
         <Text
           style={{
@@ -70,7 +72,7 @@ export const PopularCards = ({ onPress }: Props) => {
             color: "white",
           }}
         >
-          GRA ILR, NG
+          {item.address}
         </Text>
 
         <View
@@ -83,7 +85,7 @@ export const PopularCards = ({ onPress }: Props) => {
               color: "white",
             }}
           >
-            $1,500
+            ${item.price}
           </Text>
         </View>
       </View>
@@ -91,7 +93,7 @@ export const PopularCards = ({ onPress }: Props) => {
   );
 };
 
-export const Card = ({ onPress }: Props) => {
+export const Card = ({ item, onPress }: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -108,7 +110,7 @@ export const Card = ({ onPress }: Props) => {
       }}
     >
       <Image
-        source={images.newYork}
+        source={{ uri: item.image }}
         style={{
           width: "100%",
           height: "40%",
@@ -132,7 +134,7 @@ export const Card = ({ onPress }: Props) => {
             color: colors.black200,
           }}
         >
-          Cozy Suites
+          {item.name}
         </Text>
         <Text
           style={{
@@ -141,7 +143,7 @@ export const Card = ({ onPress }: Props) => {
             color: colors.black200,
           }}
         >
-          GRA ILR, NG
+          {item.address}
         </Text>
 
         <View
@@ -154,7 +156,7 @@ export const Card = ({ onPress }: Props) => {
               color: colors.black200,
             }}
           >
-            $1,500
+             ${item.price}
           </Text>
         </View>
       </View>

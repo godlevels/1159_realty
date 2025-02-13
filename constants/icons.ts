@@ -23,6 +23,7 @@ import dumbell from "@/assets/icons/dumbell.png";
 import swim from "@/assets/icons/swim.png";
 import wifi from "@/assets/icons/wifi.png";
 import dog from "@/assets/icons/dog.png";
+import backArrow from "@/assets/icons/back-arrow.png";
 
 export default {
     home,
@@ -49,5 +50,6 @@ export default {
     dumbell,
     swim,
     wifi,
-    dog
+    dog,
+    backArrow
   };
